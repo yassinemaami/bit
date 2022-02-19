@@ -1,0 +1,166 @@
+.to-do {
+  margin-top: 30px;
+}
+
+.to-do .container {
+  width: 90%;
+  margin: auto;
+  background-color: #1f2123;
+  min-height: calc(100vh - 40px);
+  padding-bottom: 20px;
+}
+
+.to-do .container h1 {
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.to-do .container #form1 {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.to-do .container #form1 .input-text {
+  width: 75%;
+  margin-right: 3px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.to-do .container #form1 .button-submit {
+  width: 25%;
+  margin-left: 3px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.to-do .container #form2 {
+  display: none !important;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.to-do .container #form2 .input-text2 {
+  width: 75%;
+  margin-right: 3px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.to-do .container #form2 .button-submit2 {
+  width: 25%;
+  margin-left: 3px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background-color: #db8a35;
+}
+
+.to-do .container .tasks {
+  cursor: pointer;
+  padding: 0px 20px;
+  margin-top: 30px;
+}
+
+.to-do .container .tasks .row {
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+.to-do .container .tasks .row .task {
+  overflow-wrap: break-word;
+  padding: 12px 8px 12px 40px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.to-do .container .tasks .row .task h5 {
+  cursor: pointer;
+  background-color: #f1f1f1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.to-do .container .tasks .row .panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.to-do .container .tasks .row:hover {
+  background-color: #d1d1d1;
+}
+
+.to-do .container .tasks .row:hover h5 {
+  background-color: #d1d1d1;
+}
+
+@media (max-width: 412px) {
+  .to-do .container .tasks .row .panel {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.done {
+  opacity: 0.5;
+}
+
+.i1:hover {
+  color: green;
+}
+
+.i2:hover {
+  color: #db8a35;
+}
+
+.i3:hover {
+  color: red;
+}
+
+footer {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #181a1b;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+footer p .loveI {
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */
