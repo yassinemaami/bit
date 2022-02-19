@@ -1,11 +1,13 @@
 .to-do {
   margin-top: 30px;
+
   .container {
     width: 90%;
     margin: auto;
     background-color: #1f2123;
     min-height: calc(100vh - 40px);
     padding-bottom: 20px;
+
     h1 {
       text-transform: uppercase;
       text-align: center;
@@ -14,15 +16,20 @@
       margin-top: 0;
       font-weight: 700;
     }
+
     #form1 {
       margin-top: 30px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+
       .input-text {
         width: 75%;
         margin-right: 3px;
         font-family: "Poppins", sans-serif;
         font-weight: 400;
       }
+
       .button-submit {
         width: 25%;
         margin-left: 3px;
@@ -30,16 +37,21 @@
         font-weight: 400;
       }
     }
+
     #form2 {
-      display: none !important;;
+      display: none !important;
       margin-top: 30px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+
       .input-text2 {
         width: 75%;
         margin-right: 3px;
         font-family: "Poppins", sans-serif;
         font-weight: 400;
       }
+
       .button-submit2 {
         width: 25%;
         margin-left: 3px;
@@ -53,17 +65,21 @@
       cursor: pointer;
       padding: 0px 20px;
       margin-top: 30px;
+
       .row {
         background-color: #f1f1f1;
         margin-bottom: 10px;
+
         .task {
           overflow-wrap: break-word;
           padding: 12px 8px 12px 40px;
+          -webkit-transition: 0.2s;
           transition: 0.2s;
           -webkit-user-select: none;
           -moz-user-select: none;
           -ms-user-select: none;
           user-select: none;
+
           h5 {
             cursor: pointer;
             background-color: #f1f1f1;
@@ -72,17 +88,25 @@
             line-height: 1.5;
           }
         }
+
         .panel {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -ms-flex-pack: distribute;
           justify-content: space-around;
         }
-      }
-      .row:hover {
-        background-color: #d1d1d1;
-      }
-      .row:hover h5 {
-        background-color: #d1d1d1;
+
+        &:hover {
+          background-color: #d1d1d1;
+
+          h5 {
+            background-color: #d1d1d1;
+          }
+        }
       }
     }
   }
@@ -90,35 +114,50 @@
 
 @media (max-width: 412px) {
   .to-do .container .tasks .row .panel {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 }
+
 .done {
   opacity: 0.5;
 }
+
 .i1:hover {
   color: green;
 }
+
 .i2:hover {
   color: #db8a35;
 }
+
 .i3:hover {
   color: red;
 }
+
 footer {
   height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #181a1b;
   margin-top: 30px;
   padding-top: 10px;
+
   p {
     text-align: center;
     color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 14px;
+
     .loveI {
       color: red;
     }
