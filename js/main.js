@@ -28,7 +28,8 @@ tasks.addEventListener("click", (e) => {
 tasks.addEventListener("click", (e) => {
   if (e.target.classList.contains("i2")) {
     var taskId = e.target.parentElement.parentElement.classList[1];
-    edit(taskId);
+    var editDiv = e.target.parentElement.parentElement;
+    edit(taskId, editDiv);
   }
 });
 ///
@@ -88,7 +89,7 @@ function toggleDoneInArray(taskId) {
     }
   }
 }
-function edit(taskId) {
+function edit(taskId, editDiv) {
   for (let i = 0; i < tasksArray.length; i++) {
     if (tasksArray[i].id == taskId) {
       var taskTitle = tasksArray[i].title;
@@ -98,12 +99,18 @@ function edit(taskId) {
   form2.style = "display :flex !important;;";
   form.style = "display :none !important;;";
   inputText2.value = taskTitle;
+  editDiv.style = "background-color: rgb(219, 138, 53 ,0.5);";
+  editDiv.firstElementChild.firstElementChild.style =
+    "background-color: rgb(219, 138, 53 ,0.0);";
 }
 
 function edited(event) {
-  tasksArray[editIndex].title = inputText2.value;
+  if (inputText2.value != "") {
+    tasksArray[editIndex].title = inputText2.value;
+  }
   addTasksToPage(tasksArray);
   form2.style = "display :none !important;;";
   form.style = "display :flex !important;;";
   event.preventDefault();
 }
+localStorage.setItem("myCat", "Tom");
