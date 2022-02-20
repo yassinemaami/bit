@@ -8,6 +8,13 @@ var editIndex = 0;
 form.addEventListener("submit", added);
 form2.addEventListener("submit", edited);
 let tasksArray = [];
+//
+if (localStorage.getItem("data")) {
+  tasksArray = JSON.parse(localStorage.getItem("data"));
+}
+//
+getLS();
+
 // //
 // Remove
 tasks.addEventListener("click", (e) => {
@@ -49,6 +56,7 @@ function addTaskToArray(task) {
   };
   //
   tasksArray.push(taskObject);
+  saveLS();
   addTasksToPage(tasksArray);
 }
 //
@@ -72,6 +80,7 @@ function addTasksToPage(tasksArray) {
         </div>
     `;
   }
+  saveLS();
 }
 function removeTaskFromArray(taskId) {
   for (let i = 0; i < tasksArray.length; i++) {
@@ -79,6 +88,7 @@ function removeTaskFromArray(taskId) {
       tasksArray.splice(i, 1);
     }
   }
+  saveLS();
 }
 function toggleDoneInArray(taskId) {
   for (let i = 0; i < tasksArray.length; i++) {
@@ -88,6 +98,7 @@ function toggleDoneInArray(taskId) {
         : (tasksArray[i].completed = false);
     }
   }
+  saveLS();
 }
 function edit(taskId, editDiv) {
   otherIndexes = [];
@@ -112,6 +123,7 @@ function edit(taskId, editDiv) {
         "background-color: rgb(219, 138, 53 ,0.0);";
     }
   }
+  saveLS();
 }
 
 function edited(event) {
@@ -122,4 +134,16 @@ function edited(event) {
   form2.style = "display :none !important;;";
   form.style = "display :flex !important;;";
   event.preventDefault();
+  saveLS();
+}
+function saveLS() {
+  localStorage.setItem("data", JSON.stringify(tasksArray));
+}
+
+function getLS() {
+  let data = localStorage.getItem("data");
+  if (data) {
+    let tasksList = JSON.parse(data);
+    addTasksToPage(tasksArray);
+  }
 }
