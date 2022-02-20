@@ -40,7 +40,6 @@ function added(event) {
   }
   event.preventDefault();
 }
-
 //
 function addTaskToArray(task) {
   const taskObject = {
@@ -52,6 +51,7 @@ function addTaskToArray(task) {
   tasksArray.push(taskObject);
   addTasksToPage(tasksArray);
 }
+//
 function addTasksToPage(tasksArray) {
   tasks.innerHTML = "";
   for (let i = 0; i < tasksArray.length; i++) {
@@ -90,6 +90,7 @@ function toggleDoneInArray(taskId) {
   }
 }
 function edit(taskId, editDiv) {
+  otherIndexes = [];
   for (let i = 0; i < tasksArray.length; i++) {
     if (tasksArray[i].id == taskId) {
       var taskTitle = tasksArray[i].title;
@@ -98,10 +99,19 @@ function edit(taskId, editDiv) {
   }
   form2.style = "display :flex !important;;";
   form.style = "display :none !important;;";
-  inputText2.value = taskTitle;
-  editDiv.style = "background-color: rgb(219, 138, 53 ,0.5);";
+  editDiv.style = "background-color: #E1B97B;";
   editDiv.firstElementChild.firstElementChild.style =
     "background-color: rgb(219, 138, 53 ,0.0);";
+  inputText2.value = taskTitle;
+  form2.firstElementChild.focus();
+  let children = document.querySelector(".tasks").children;
+  for (let i = 0; i < tasksArray.length; i++) {
+    if (i != editIndex) {
+      children[i].style = "background-color: #f1f1f1;";
+      children[i].firstElementChild.firstElementChild.style =
+        "background-color: rgb(219, 138, 53 ,0.0);";
+    }
+  }
 }
 
 function edited(event) {
@@ -113,4 +123,3 @@ function edited(event) {
   form.style = "display :flex !important;;";
   event.preventDefault();
 }
-localStorage.setItem("myCat", "Tom");
